@@ -10,5 +10,6 @@ steps:
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'Path'   # safer for self-hosted
     publishJUnitResults: true
+    jdkUserInputPath: 'C:\Program Files\Java\jdk-17\bin'
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
