@@ -1,17 +1,14 @@
 trigger:
 - main
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: rcbagent
 
 steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.17'
-    jdkArchitectureOption: 'x64'
+    javaHomeOption: 'Path'   # safer for self-hosted
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
